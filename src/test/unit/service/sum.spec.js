@@ -1,26 +1,26 @@
-const sum = require('../../utils/sum');
+const sum = require('@/service/sum')
 
 test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
+  expect(sum(1, 2)).toBe(3)
+})
 
-test("dataから!nullの値を取得できる条件文", () => {
+test('dataから!nullの値を取得できる条件文のテスト', () => {
   const data = {
     test1: 'a',
     test2: [],
     test3: ['1'],
     test4: '',
     test5: null
-  };
+  }
   const expected = {
     test1: 'a',
-    test3: ['1'],
-  };
-  let actual = {};
+    test3: ['1']
+  }
+  let actual = {}
   for (let [key, val] of Object.entries(data)) {
     if (val && val.length > 0) {
-      actual[key] = val;
+      actual[key] = val
     }
   }
-  expect(actual).toEqual(expected);
+  expect(actual).toEqual(expected)
 })
