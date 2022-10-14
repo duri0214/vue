@@ -9,15 +9,18 @@
         子コンポーネントから受け取った値：{{ parentOutputData }}
       </div>
     </label>
+    <CustomTable/>
   </div>
 </template>
 
 <script>
 import ChildComponent from './ChildComponent'
+import CustomTable from './CustomTable'
 
 export default {
   name: 'ParentComponent',
   components: {
+    CustomTable,
     ChildComponent
   },
   data () {
