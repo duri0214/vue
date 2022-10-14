@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'EditableTable',
+  name: 'CustomTable',
   data () {
     return {
       users: [],
