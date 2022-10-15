@@ -1,10 +1,10 @@
 const sum = require('@/service/sum')
 
-test('adds 1 + 2 to equal 3', () => {
+it('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3)
 })
 
-test('dataから!nullの値を取得できる条件文のテスト', () => {
+it('dataから!nullの値を取得できる条件文のテスト', () => {
   const data = {
     test1: 'a',
     test2: [],
