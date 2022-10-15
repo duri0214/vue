@@ -1,5 +1,10 @@
-import { shallowMount } from '@vue/test-utils'
+import { config, shallowMount } from '@vue/test-utils'
 import CustomTable from '@/components/CustomTable'
+
+config.stubs['el-checkbox'] = {template: '<div />'}
+config.stubs['el-table-column'] = {template: '<div />'}
+config.stubs['el-table-column'] = {template: '<div />'}
+config.stubs['el-table'] = {template: '<div />'}
 
 describe('CustomTable.vue', () => {
   let wrapper
