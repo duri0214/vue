@@ -5,7 +5,7 @@
     <div>
       <label>
         子コンポーネントから親コンポーネントへ入力値を受け渡す:
-        <input type="text" v-model="childInputData" @change="childEmit">
+        <input type="text" v-model="childInputData" @input="childEmit">
       </label>
     </div>
   </div>
