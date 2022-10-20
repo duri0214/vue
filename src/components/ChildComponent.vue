@@ -8,6 +8,14 @@
         <input type="text" v-model="childInputData" @input="childEmit">
       </label>
     </div>
+    <div id="child-radio">
+      子コンポーネントのラジオボックスに「親コンポーネントのラジオボタンの値」をinjection
+      <el-radio-group v-model="childRadioData" @change="$emit('input', childRadioData)">
+        <template v-for="(option, index) in options">
+          <el-radio :key="index" :label="option.value">{{ option.label }}</el-radio>
+        </template>
+      </el-radio-group>
+    </div>
   </div>
 </template>
 
@@ -16,14 +24,17 @@ export default {
   name: 'ChildComponent',
   data () {
     return {
-      childInputData: ''
+      childInputData: '',
+      childRadioData: ''
     }
   },
   props: {
     parentToChild: {
       type: String,
       default: ''
-    }
+    },
+    options: { type: Array, required: true },
+    value: { type: String, required: false }
   },
   methods: {
     childEmit () {
@@ -43,5 +54,8 @@ export default {
     margin: auto;
     width: 1000px;
     background-color: #7fbfff;
+  }
+  #child-radio {
+    margin-top: 20px;
   }
 </style>
