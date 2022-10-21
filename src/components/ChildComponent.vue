@@ -33,8 +33,7 @@ export default {
       type: String,
       default: ''
     },
-    options: { type: Array, required: true },
-    value: { type: String, required: false }
+    options: { type: Array, required: true }
   },
   methods: {
     childEmit () {
