@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Card from '@/components/Card'
-import ParentComponent from '../components/ParentComponent'
+import ParentComponent from '../views/ParentComponent'
 
 Vue.use(Router)
 

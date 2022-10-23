@@ -19,7 +19,7 @@
 
 <script>
 import ChildComponent from './ChildComponent'
-import CustomTable from './CustomTable'
+import CustomTable from '../components/CustomTable'
 
 export default {
   name: 'ParentComponent',
