@@ -7,7 +7,7 @@
       <div id="parent-radio">
         親コンポーネントのラジオボタンの値: <br>{{ options }}
       </div>
-      <child-component :parentToChild="parentInputData" @child-event="parentMethod" :options="options" @input="updateValue"/>
+      <child :parentToChild="parentInputData" @child-event="parentMethod" :options="options" @input="updateValue"/>
       <div>
         子コンポーネントから受け取った値：{{ parentOutputData }}<br>
         子コンポーネントから受け取ったラジオボタンの値：{{ incomingForm.radio }}
@@ -18,14 +18,14 @@
 </template>
 
 <script>
-import ChildComponent from './ChildComponent'
+import Child from '../views/Child'
 import CustomTable from '../components/CustomTable'
 
 export default {
-  name: 'ParentComponent',
+  name: 'Parent',
   components: {
     CustomTable,
-    ChildComponent
+    Child
   },
   data () {
     return {

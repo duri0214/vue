@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'ChildComponent',
+  name: 'Child',
   data () {
     return {
       childInputData: '',

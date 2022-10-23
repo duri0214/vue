@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Card from '@/components/Card'
-import ParentComponent from '../views/ParentComponent'
+import Parent from '../views/Parent'
 
 Vue.use(Router)
 
@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'ParentComponent',
-      component: ParentComponent
+      name: 'Parent',
+      component: Parent
     },
     {
       path: '/card',
