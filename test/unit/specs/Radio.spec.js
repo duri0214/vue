@@ -38,6 +38,7 @@ describe('Radio.vue', () => {
     expect(radioInput.element.checked).toBeTruthy()
 
     // Note: どれかを選んで 3 が入った、という状態を作れないだろうか。setDataしかないのだろうか
+    expect(radioInput.vm.$data.childRadioData).toBeNull()
     wrapper1.setData({
       childRadioData: 3
     })

@@ -13,7 +13,7 @@ export default {
   name: 'Radio',
   data () {
     return {
-      childRadioData: ''
+      childRadioData: null
     }
   },
   props: {
