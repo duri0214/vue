@@ -30,7 +30,7 @@ export default {
   },
   data () {
     return {
-      childInputData: '',
+      childInputData: null,
       incomingForm: {
         text: '',
         radio: '', // user has selected
