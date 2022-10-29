@@ -1,6 +1,5 @@
 <template>
   <div id="child-radio">
-    子コンポーネントのラジオボックスに「親コンポーネントのラジオボタンの値」をinjection<br>
     <el-radio-group v-model="childRadioData" @change="$emit('input', childRadioData)">
       <template v-for="(option, index) in options">
         <el-radio :key="index" :label="option.value">{{ option.label }}</el-radio>
