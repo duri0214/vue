@@ -1,45 +1,39 @@
-/**
- * ローカルストレージへ保存
- * @param {string} name 保存するkey名
- * @param {Object} data
- */
-function save (name, data) {
-  try {
-    localStorage.setItem(name, JSON.stringify(data))
-  } catch (e) {
-    console.error(e.message)
-  }
-}
-
-/**
- * ローカルストレージから読み込み
- * @param {string} name 取り出すkey名
- */
-function load (name) {
-  let data = null
-  try {
-    data = JSON.parse(localStorage.getItem(name))
-  } catch (e) {
-    console.error(e.message)
-    return null
+export default class LocalStorage {
+  /**
+   * @param {string} name
+   */
+  constructor (name) {
+    this.keyName = name
   }
 
-  return data
-}
-
-/**
- * ローカルストレージのキーを削除
- * @param {string} name
- */
-function remove (name) {
-  try {
-    localStorage.removeItem(name)
-  } catch (e) {
-    console.error(e.message)
+  /**
+   * @param {Object} data
+   */
+  save (data) {
+    try {
+      localStorage.setItem(this.keyName, JSON.stringify(data))
+    } catch (e) {
+      console.error(e.message)
+    }
   }
-}
-module.exports = {
-  save,
-  load,
-  remove
+
+  load () {
+    let data = null
+    try {
+      data = JSON.parse(localStorage.getItem(this.keyName))
+    } catch (e) {
+      console.error(e.message)
+      return null
+    }
+
+    return data
+  }
+
+  remove () {
+    try {
+      localStorage.removeItem(this.keyName)
+    } catch (e) {
+      console.error(e.message)
+    }
+  }
 }
