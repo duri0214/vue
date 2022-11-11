@@ -1,12 +1,17 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <Dialog/>
   </div>
 </template>
 
 <script>
+import Dialog from './Dialog'
 export default {
   name: 'HelloWorld',
+  components: {
+    Dialog
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
