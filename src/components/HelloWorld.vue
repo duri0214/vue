@@ -1,12 +1,15 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h2>きょうの天気</h2>
+    <h3>{{ retrievedWeather }}</h3>
     <Dialog/>
   </div>
 </template>
 
 <script>
 import Dialog from './Dialog'
+import { weatherService } from '@/service/WeatherService'
 export default {
   name: 'HelloWorld',
   components: {
@@ -15,12 +18,23 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      valueForSetValueAndEmit: null
+      valueForSetValueAndEmit: null,
+      retrievedWeather: null
     }
   },
-  created () {
+  async created () {
     const fromDbValue = 'The value was set at the time of created'
     this.setValueAndEmit(fromDbValue)
+
+    // retrieve by api
+    await weatherService.getWeather(35.681147934006624, 139.76673203255143)
+      .then(res => {
+        this.retrievedWeather = res
+        console.log('this.retrievedWeather in created:', this.retrievedWeather)
+      })
+  },
+  mounted () {
+    console.log('this.retrievedWeather in mounted: ', this.retrievedWeather)
   },
   methods: {
     setValueAndEmit (payload) {
